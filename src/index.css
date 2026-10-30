@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: #1e293b;
+    background-color: #f8fafc;
+    transition: background-color 300ms ease, color 300ms ease;
+  }
+
+  .dark body {
+    color: #f1f5f9;
+    background-color: #090d16;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Work Sans', 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+}
+
+/* Blur transition effect when changing between light and dark modes */
+.theme-blur-active {
+  animation: themeBlurTransition 480ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  will-change: filter, opacity;
+}
+
+@keyframes themeBlurTransition {
+  0% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+  50% {
+    filter: blur(12px) brightness(1.08);
+    opacity: 0.88;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}

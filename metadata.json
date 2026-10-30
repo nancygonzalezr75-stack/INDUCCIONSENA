@@ -1,0 +1,6 @@
+{
+  "name": "Inducción SENA - Portal y Evaluación de Aprendices",
+  "description": "Sistema de gestión para la inducción de aprendices del SENA: identidad institucional, derechos, deberes y evaluación interactiva de apropiación con constancia oficial.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
